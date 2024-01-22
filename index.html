@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food House</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/sCvZ1mS/images-removebg-preview.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- google fonts link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="primary-fonts primary-fonts">
+    <!-- component -->
+    <header class="bg-white">
+      <div class="container mx-auto px-4 py-8 flex items-center">
+        <!-- logo -->
+        <div class="mr-auto md:w-48 flex-shrink-0">
+          <img
+            class="h-8 md:h-10"
+            src="https://i.ibb.co/Y7Nm7pZ/images.png"
+            alt=""
+          />
+        </div>
+
+        <!-- search -->
+        <div
+          class="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 rounded-md hidden xl:flex items-center"
+        >
+          <select
+            class="bg-transparent uppercase border-none font-bold text-sm p-4 mr-4"
+            name=""
+            id=""
+          >
+            <option>All categories</option>
+            <option>Vegetable</option>
+            <option>Nuts</option>
+            <option>Foods</option>
+            <option>Discount categories</option>
+          </select>
+          <input
+            id="inputText"
+            class="border-none bg-transparent font-semibold text-sm pl-4 focus:outline-none"
+            type="text"
+            placeholder="Search..."
+          />
+          <button class="" onclick="clearInput()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+          </button>
+          
+            <path
+              fill="currentColor"
+              d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- phone number -->
+        <div class="ml-auto md:w-48 hidden sm:flex flex-col place-items-end">
+          <span class="font-bold md:text-xl">8 800 332 65-66</span>
+          <span class="font-semibold text-sm text-gray-400">Support 24/7</span>
+        </div>
+
+        <!-- buttons -->
+        <nav class="contents">
+          <ul class="ml-4 xl:w-48 flex items-center justify-end">
+            <li class="ml-2 lg:ml-4 relative inline-block">
+              <a class="" href="">
+                <svg
+                  class="h-9 lg:h-10 p-2 text-gray-500"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="far"
+                  data-icon="user"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  class="svg-inline--fa fa-user fa-w-14 fa-9x"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="ml-2 lg:ml-4 relative inline-block">
+              <a class="" href="">
+                <div
+                  class="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm"
+                >
+                  3
+                </div>
+                <svg
+                  class="h-9 lg:h-10 p-2 text-gray-500"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="far"
+                  data-icon="heart"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="svg-inline--fa fa-heart fa-w-16 fa-9x"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="ml-2 lg:ml-4 relative inline-block">
+              <a class="" href="">
+                <div
+                  class="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm"
+                >
+                  12
+                </div>
+                <svg
+                  class="h-9 lg:h-10 p-2 text-gray-500"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="far"
+                  data-icon="shopping-cart"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                  class="svg-inline--fa fa-shopping-cart fa-w-18 fa-9x"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M551.991 64H144.28l-8.726-44.608C133.35 8.128 123.478 0 112 0H12C5.373 0 0 5.373 0 12v24c0 6.627 5.373 12 12 12h80.24l69.594 355.701C150.796 415.201 144 430.802 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-18.136-7.556-34.496-19.676-46.142l1.035-4.757c3.254-14.96-8.142-29.101-23.452-29.101H203.76l-9.39-48h312.405c11.29 0 21.054-7.869 23.452-18.902l45.216-208C578.695 78.139 567.299 64 551.991 64zM208 472c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm256 0c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm23.438-200H184.98l-31.31-160h368.548l-34.78 160z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- cart count -->
+        <div class="ml-4 hidden sm:flex flex-col font-bold">
+          <span class="text-xs text-gray-400">Your Cart</span>
+          <span>$2,650,59</span>
+        </div>
+      </div>
+
+      <hr />
+    </header>
+
+    <main>
+      <!-- hero section  -->
+
+      <div
+        class="banner-container justify-around items-center md:flex lg:flex px-4 lg:px-10"
+      >
+        <div class="content-container pt-20 md:py-20 lg:py-20">
+          <h2
+            class="text-[#68a47f] text-[25px] md:text-[35px] lg:text-[50px] lg:text-5xl yellowtail-fonts"
+          >
+            100% Natural Food
+          </h2>
+          <h1
+            class="text-[40px] md:text-[40px] lg:text-[60px] text-[#274c5b] font-extrabold"
+          >
+            Choose the best <br />
+            healthier way <br />
+            of life
+          </h1>
+          <button class="explore-btn">
+            Explore Now <i class="fa-solid fa-circle-arrow-right"></i>
+          </button>
+        </div>
+
+        <div
+          class="justify-center items-center relative lg:bottom-0 bottom-[6px] py-10"
+        >
+          <img
+            class="w-[500px] md:w-[400px] lg:w-[700px]"
+            src="img/hero-img2.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- hero section  -->
+      <!-- discount section  -->
+      <section
+        class="lg:flex container mx-auto justify-center gap-5 py-20 px-5 md:px-11"
+      >
+        <div
+          class="bg-orange-300 text-white w-full lg:w-[400px] py-16 px-6 mb-5 lg:mb-0 discountbox1 rounded-md"
+        >
+          <h3
+            class="yellowtail-fonts text-2xl md:text-4xl lg:text-2xl font-medium"
+          >
+            Natural!!
+          </h3>
+          <h2
+            class="text-[28px] mt-1 md:text-[38px] lg:text-[28px] font-semibold leading-[34px]"
+          >
+            Get Garden
+            <br />
+            Fresh Fruits
+          </h2>
+        </div>
+        <div
+          class="bg-red-300 w-full lg:w-[400px] py-16 px-6 discountbox2 rounded-md"
+        >
+          <h3 class="yellowtail-fonts text-2xl font-medium text-[#7EB693]">
+            Offer!!
+          </h3>
+          <h2
+            class="text-[28px] mt-1 md:text-[38px] lg:text-[28px] text-[#274C5B] font-semibold leading-[34px]"
+          >
+            Get 10% off <br />
+            on Vegetables
+          </h2>
+        </div>
+      </section>
+      <!-- discount section  -->
+
+      <!-- Working Accredited Farmers section  -->
+      <section class="bg-[#F9F8F8] py-10 lg:flex justify-center items-center">
+        <div class="">
+          <img src="img/farmer-img.png" alt="" />
+        </div>
+        <div class="px-8">
+          <h4 class="yellowtail-fonts text-[#7EB693] text-4xl font-normal">
+            About us
+          </h4>
+          <h2
+            class="leading-[55px] my-3 text-[#274C5B] text-[35px] md:text-[45px] lg:text-[45px] font-bold"
+          >
+            We Believe in Working <br />
+            Accredited Farmers
+          </h2>
+          <p class="text-[#525C60] text-lg font-normal lg:w-[550px]">
+            Simply dummy text of the printing and typesetting industry. Lorem
+            had ceased to been the industry's standard dummy text ever since the
+            1500s, when an unknown printer took a galley.
+          </p>
+          <div class="flex gap-4 mt-[30px]">
+            <div
+              class="bg-white w-[100px] h-[100px] rounded-xl justify-center flex items-center"
+            >
+              <img src="img/Vegan Food.png" alt="" />
+            </div>
+            <div>
+              <h4 class="text-[#274C5B] text-[20px] font-bold">
+                Organic Foods Only
+              </h4>
+              <p class="text-[#525C60] lg:w-[400px] font-normal text-lg">
+                Simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-[30px]">
+            <div
+              class="bg-white w-[100px] h-[100px] rounded-xl justify-center flex items-center"
+            >
+              <img src="img/Mailbox Quality.png" alt="" />
+            </div>
+            <div>
+              <h4 class="text-[#274C5B] text-[20px] font-bold">
+                Quality Standards
+              </h4>
+              <p class="text-[#525C60] lg:w-[400px] font-normal text-lg">
+                Simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum
+              </p>
+            </div>
+          </div>
+          <div class="py-10">
+            <button
+              class="bg-[#274C5B] px-7 gap-3 flex justify-center items-center text-white py-3 rounded-lg"
+            >
+              Shop now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Working Accredited Farmers section  -->
+
+      <!-- product section  -->
+      <section class="py-20">
+        <h4
+          class="yellowtail-fonts text-[#7EB693] text-center text-4xl font-normal"
+        >
+          Categories
+        </h4>
+        <h2
+          class="leading-[55px] mt-3 mb-10 text-[#274C5B] text-center text-[35px] md:text-[45px] lg:text-[45px] font-bold"
+        >
+          Our Products
+        </h2>
+        <div
+          class="card-container px-5 container mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4"
+        >
+          <!-- card1 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[90px] text-center rounded-md text-white font-medium"
+            >
+              Vegetable
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/Photo (1).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Calabrese Broccoli
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card2 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[80px] text-center rounded-md text-white font-medium"
+            >
+              Fresh
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/Photo (2).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Fresh Banana Fruits
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $14.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card3 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[80px] text-center rounded-lg text-white font-medium"
+            >
+              Millets
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/Photo (3).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              White Nuts
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card4 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[90px] text-center rounded-lg text-white font-medium"
+            >
+              Vegetable
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/product13.png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Vegan Red Tomato
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card5 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[80px] text-center rounded-lg text-white font-medium"
+            >
+              Health
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/product14.png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Mung Bean
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card6 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[70px] text-center rounded-lg text-white font-medium"
+            >
+              Nuts
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/Photo (6).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Brown Hazelnut
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card7 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[80px] text-center rounded-lg text-white font-medium"
+            >
+              Fresh
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/Photo (5).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Eggs
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card8 -->
+          <div class="primary-shadow px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative top-[30px] left-[15px] w-[80px] text-center rounded-lg text-white font-medium"
+            >
+              Fresh
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[270px]"
+            >
+              <img class="h-[270px]" src="img/Photo (4).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Zelco Suji Elaichi Rusk
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center py-10">
+          <button
+            class="bg-[#274C5B] px-7 gap-3 flex font-semibold justify-center items-center text-white py-3 rounded-lg"
+          >
+            View more <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
+      <!-- product section  -->
+
+      <!-- Testimonial section  -->
+      <section class="tes-bg pt-20 pb-10">
+        <h4
+          class="yellowtail-fonts text-[#7EB693] text-center text-4xl font-normal"
+        >
+          Testimonial
+        </h4>
+        <h2
+          class="leading-[55px] my-3 text-[#274C5B] text-center text-[35px] md:text-[45px] lg:text-[45px] font-bold"
+        >
+          What Our Customer Saying?
+        </h2>
+        <div class="carousel w-full">
+          <!-- customer reviews 1 -->
+          <div id="item1" class="carousel-item w-full">
+            <div class="text-center w-full">
+              <div class="flex justify-center mt-5">
+                <img
+                  class="w-[100px] h-[100px] rounded-[50px]"
+                  src="img/tes1.png"
+                  alt=""
+                />
+              </div>
+              <div class="rating mt-5">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              <div>
+                <p class="mt-3 md:w-[550px] mx-auto lg:w-[650px]">
+                  Simply dummy text of the printing and typesetting industry.
+                  Lorem Ipsum simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been.
+                </p>
+                <h4 class="mt-3 text-lg font-semibold text-[#525C60]">
+                  Sara Taylor
+                </h4>
+                <p class="text-[#525C60]">Consumer</p>
+              </div>
+            </div>
+          </div>
+          <!-- customer reviews 2 -->
+          <div id="item2" class="carousel-item w-full">
+            <div class="text-center w-full">
+              <div class="flex justify-center mt-5">
+                <img
+                  class="w-[100px] h-[100px] rounded-[50px]"
+                  src="img/tes2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="rating mt-5">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              <div>
+                <p class="mt-3 md:w-[550px] mx-auto lg:w-[650px]">
+                  Simply dummy text of the printing and typesetting industry.
+                  Lorem Ipsum simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been.
+                </p>
+                <h4 class="mt-3 text-lg font-semibold text-[#525C60]">
+                  Sara Taylor
+                </h4>
+                <p class="text-[#525C60]">Consumer</p>
+              </div>
+            </div>
+          </div>
+          <!-- customer reviews 3 -->
+          <div id="item3" class="carousel-item w-full">
+            <div class="text-center w-full">
+              <div class="flex justify-center mt-5">
+                <img
+                  class="w-[100px] h-[100px] rounded-[50px]"
+                  src="img/tes3.png"
+                  alt=""
+                />
+              </div>
+              <div class="rating mt-5">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              <div>
+                <p class="mt-3 md:w-[550px] mx-auto lg:w-[650px]">
+                  Simply dummy text of the printing and typesetting industry.
+                  Lorem Ipsum simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been.
+                </p>
+                <h4 class="mt-3 text-lg font-semibold text-[#525C60]">
+                  Sara Taylor
+                </h4>
+                <p class="text-[#525C60]">Consumer</p>
+              </div>
+            </div>
+          </div>
+          <!-- customer reviews 4 -->
+          <div id="item4" class="carousel-item w-full">
+            <div class="text-center w-full">
+              <div class="flex justify-center mt-5">
+                <img
+                  class="w-[100px] h-[100px] rounded-[50px]"
+                  src="img/tes4.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="rating mt-5">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              <div>
+                <p class="mt-3 md:w-[550px] mx-auto lg:w-[650px]">
+                  Simply dummy text of the printing and typesetting industry.
+                  Lorem Ipsum simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been.
+                </p>
+                <h4 class="mt-3 text-lg font-semibold text-[#525C60]">
+                  Sara Taylor
+                </h4>
+                <p class="text-[#525C60]">Consumer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center w-full py-2 gap-2 mb-8">
+          <a href="#item1" class="w-4 h-4 bg-gray-400 rounded-[50%]"></a>
+          <a href="#item2" class="w-4 h-4 bg-gray-400 rounded-[50%]"></a>
+          <a href="#item3" class="w-4 h-4 bg-gray-400 rounded-[50%]"></a>
+          <a href="#item4" class="w-4 h-4 bg-gray-400 rounded-[50%]"></a>
+        </div>
+        <div class="w-[60%] h-[2px] bg-gray-200 mx-auto"></div>
+
+        <div
+          class="lg:flex flex-wrap mx-auto w-auto text-center justify-center items-center gap-6 mt-14"
+        >
+          <div
+            class="radial-progress text-slate-500"
+            style="--value: 100; --size: 8rem; --thickness: 6px"
+          >
+            <h2 class="text-center font-semibold leading-[15px]">
+              100% <br />
+              <span class="text-xs">Organic</span>
+            </h2>
+          </div>
+          <div
+            class="radial-progress text-slate-500"
+            style="--value: 80; --size: 8rem; --thickness: 6px"
+          >
+            <h2 class="text-center font-semibold leading-[15px]">
+              285 <br />
+              <span class="text-xs">Active Product</span>
+            </h2>
+          </div>
+          <div
+            class="radial-progress text-slate-500"
+            style="--value: 85; --size: 8rem; --thickness: 6px"
+          >
+            <h2 class="text-center font-semibold leading-[15px]">
+              350+ <br />
+              <span class="text-xs">Organic Orchads</span>
+            </h2>
+          </div>
+          <div
+            class="radial-progress text-slate-500"
+            style="--value: 90; --size: 8rem; --thickness: 6px"
+          >
+            <h2 class="text-center font-semibold leading-[15px]">
+              25+ <br />
+              <span class="text-xs">Years of Farming</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonial section  -->
+
+      <!-- offer section  -->
+      <section class="bg-[#274C5B] lg:px-16 py-20">
+        <div
+          class="lg:flex justify-between items-center lg:py-0 pb-6 lg:px-5 px-8"
+        >
+          <div class="mb-3">
+            <h4 class="yellowtail-fonts text-[#7EB693] text-4xl font-normal">
+              Offer
+            </h4>
+            <h2
+              class="my-3 text-white text-[35px] md:text-[45px] lg:text-[45px] font-bold"
+            >
+              We Offer Organic For You
+            </h2>
+          </div>
+          <div>
+            <button class="bg-[#EFD372] py-3 px-5 rounded-md view-btn">
+              View All Product
+              <i class="fa-solid fa-circle-arrow-right text-[#274C5B]"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="card-container px-5 container mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4"
+        >
+          <!-- card1 -->
+          <div class="primary-shadow h-[400px] bg-white px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] w-[90px] text-center rounded-md text-white font-medium"
+            >
+              Vegetable
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[230px]"
+            >
+              <img class="h-[230px]" src="img/Photo (7).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">Mung Bean</h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card2 -->
+          <div class="primary-shadow px-3 h-[400px] bg-white rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative w-[80px] text-center rounded-md text-white font-medium"
+            >
+              Vegetable
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[230px]"
+            >
+              <img class="h-[230px]" src="img/Photo (8).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">
+              Brown Hazelnut
+            </h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $14.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card3 -->
+          <div class="primary-shadow px-3 h-[400px] bg-white rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative w-[80px] text-center rounded-lg text-white font-medium"
+            >
+              Vegetable
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[230px]"
+            >
+              <img class="h-[230px]" src="img/product15.png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">Onion</h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- card4 -->
+          <div class="primary-shadow h-[400px] bg-white px-3 rounded-lg py-3">
+            <h5
+              class="bg-[#274C5B] relative w-[90px] text-center rounded-lg text-white font-medium"
+            >
+              Vegetable
+            </h5>
+            <div
+              class="flex justify-center items-center overflow-hidden h-[230px]"
+            >
+              <img class="h-[230px]" src="img/Photo (10).png" alt="" />
+            </div>
+            <h3 class="font-semibold text-[20px] ml-4 mt-2 mb-1">Cabbage</h3>
+            <hr />
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <p class="font-semibold text-[18px] ml-4">
+                  <strike class="font-semibold text-[#B8B8B8] text-[18px]"
+                    >$20.00</strike
+                  >
+                  $13.00
+                </p>
+              </div>
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- offer section  -->
+
+      <!-- Organic Store section  -->
+      <section class="lg:flex justify-center items-center">
+        <div class="w-full lg:w-2/4">
+          <img class="lg:w-[100%]" src="img/Photo (1).jpg" alt="" />
+        </div>
+        <div class="w-full lg:w-2/4">
+          <div
+            class="bg-white rounded-lg py-10 lg:py-10 lg:px-10 px-5 relative lg:left-[-50px]"
+          >
+            <h4 class="yellowtail-fonts text-[#7EB693] text-4xl font-normal">
+              Eco Friendly
+            </h4>
+            <h2
+              class="leading-[55px] my-3 text-[#274C5B] text-[35px] md:text-[45px] lg:text-[45px] font-bold"
+            >
+              Econis is a Friendly <br />
+              Organic Store
+            </h2>
+
+            <h3 class="text-[#274C5B] font-medium text-xl mt-3">
+              Start with Our Company First
+            </h3>
+            <p class="lg:w-[555px]">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptat
+              accusantium doloremque laudantium. Sed ut perspiciatis.
+            </p>
+
+            <h3 class="text-[#274C5B] font-medium text-xl mt-3">
+              Learn How to Grow Yourself
+            </h3>
+            <p class="lg:w-[555px]">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptat
+              accusantium doloremque laudantium. Sed ut perspiciatis.
+            </p>
+
+            <h3 class="text-[#274C5B] font-medium text-xl mt-3">
+              Farming Strategies of Today
+            </h3>
+            <p class="lg:w-[555px]">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptat
+              accusantium doloremque laudantium. Sed ut perspiciatis.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Organic Store section  -->
+
+      <!-- deferments items section -->
+      <section
+        class="lg:flex justify-center items-center gap-5 bg-[#F1F8F4] px-5 py-10 lg:py-20"
+      >
+        <div
+          class="lg:w-[300px] item1 h-[300px] mb-5 rounded-md flex justify-center items-center"
+        >
+          <h3
+            class="w-[130px] text-[#274C5B] font-medium bg-white rounded-md text-center px-3 py-2"
+          >
+            Organic Juice
+          </h3>
+        </div>
+        <div
+          class="lg:w-[300px] item2 h-[300px] mb-5 rounded-md flex justify-center items-center"
+        >
+          <h3
+            class="w-[130px] text-[#274C5B] font-medium bg-white rounded-md text-center px-3 py-2"
+          >
+            Organic Food
+          </h3>
+        </div>
+        <div
+          class="lg:w-[300px] item3 h-[300px] mb-5 rounded-md flex justify-center items-center"
+        >
+          <h3
+            class="w-[130px] text-[#274C5B] font-medium bg-white rounded-md text-center px-3 py-2"
+          >
+            Nuts Cookis
+          </h3>
+        </div>
+      </section>
+      <!-- deferments items section -->
+
+      <!-- News section  -->
+      <section class="lg:px-16 py-20">
+        <div
+          class="lg:flex justify-between items-center lg:py-0 pb-6 lg:px-0 px-8"
+        >
+          <div class="mb-3">
+            <h4 class="yellowtail-fonts text-[#7EB693] text-4xl font-normal">
+              News
+            </h4>
+            <h2
+              class="my-3 text-[#274C5B] text-[35px] md:text-[45px] lg:text-[45px] font-bold"
+            >
+              Discover weekly content about <br />
+              organic food, & more
+            </h2>
+          </div>
+          <div>
+            <button
+              class="border-[2px] border-[#274C5B] font-semibold text-[#274C5B] py-3 px-5 rounded-md"
+            >
+              More News
+              <i class="fa-solid fa-circle-arrow-right text-[#274C5B]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- news box  -->
+        <div
+          class="lg:flex justify-center items-center mb-0 lg:mb-20 lg:px-0 px-4 gap-5"
+        >
+          <div
+            class="w-full lg:mb-0 md:mb-[85px] mb-[100px] rounded-lg news1 h-[400px] bg-slate-800"
+          >
+            <div
+              class="w-[95%] lg:w-[80%] md:w-[80%] bg-white mx-auto relative bottom-[-230px] news-shadow py-8 px-8 rounded-md"
+            >
+              <p class="text-[#274C5B] font-medium mb-2">
+                <i class="fa-solid fa-user text-[#EFD372]"></i> By Rachi Card
+              </p>
+              <h4 class="text-[#274C5B] font-extrabold text-lg mb-1">
+                The Benefits of Vitamin D & How to Get It
+              </h4>
+              <p class="mb-2">
+                Simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum
+              </p>
+              <button
+                class="bg-[#EFD372] px-4 py-2 font-semibold rounded-md text-[#274C5B]"
+              >
+                Read More
+                <i class="fa-solid fa-circle-arrow-right text-[#274C5B]"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="w-full lg:mb-0 md:mb-[85px] mb-[100px] rounded-lg news2 h-[400px] bg-slate-800"
+          >
+            <div
+              class="w-[95%] lg:w-[80%] md:w-[80%] bg-white mx-auto relative bottom-[-230px] news-shadow py-8 px-8 rounded-md"
+            >
+              <p class="text-[#274C5B] font-medium mb-2">
+                <i class="fa-solid fa-user text-[#EFD372]"></i> By Rachi Card
+              </p>
+              <h4 class="text-[#274C5B] font-extrabold text-lg mb-1">
+                Our Favourite Summertime Tommeto
+              </h4>
+              <p class="mb-2">
+                Simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum
+              </p>
+              <button
+                class="bg-[#EFD372] px-4 py-2 font-semibold rounded-md text-[#274C5B]"
+              >
+                Read More
+                <i class="fa-solid fa-circle-arrow-right text-[#274C5B]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- News section  -->
+
+      <!-- banner section  -->
+      <section class="px-4 lg:px-16 py-10">
+        <div
+          class="md:flex lg:flex justify-between items-center banner-img px-10 py-16 rounded-lg"
+        >
+          <div>
+            <h2
+              class="my-3 text-white text-center lg:text-left md:text-left text-[35px] leading-[55px] md:text-[35px] lg:text-[45px] font-bold"
+            >
+              Subscribe to <br />
+              our Newsletter
+            </h2>
+          </div>
+          <div class="flex justify-center gap-3 items-center">
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <button
+              class="btn text-white bg-[#274C5B] hover:bg-[#274C5B] border-none"
+            >
+              Warning
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- banner section  -->
+    </main>
+    <footer>
+      <div class="md:flex lg:flex justify-center gap-2 lg:gap-10 py-10">
+        <div
+          class="md:text-right md:border-r-2 lg:text-right lg:border-r-2 px-8"
+        >
+          <h3 class="text-lg font-bold text-[#274C5B]">Contact Us</h3>
+          <h4 class="font-semibold text-[#274C5B]">Email</h4>
+          <p>needhelp@Organia.com</p>
+
+          <h4 class="font-semibold text-[#274C5B]">Phone</h4>
+          <p>666 888 888</p>
+
+          <h4 class="font-semibold text-[#274C5B]">Address</h4>
+          <p>88 road, borklyn street, USA</p>
+        </div>
+        <div class="pl-8">
+          <div
+            class="flex mt-6 md:mt-0 lg:mt-0 md:justify-center md:items-center lg:justify-center lg:items-center"
+          >
+
+              <img
+              class="h-8 md:h-10"
+              src="https://i.ibb.co/Y7Nm7pZ/images.png"
+              alt=""
+            />
+            
+            
+          </div>
+          <p
+            class="md:w-[300px] lg:w-[500px] text-left md:text-center lg:text-center mt-4"
+          >
+            Simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum simply dummy text of the printing
+          </p>
+          <!-- icon -->
+          <div
+            class="flex gap-2 md:justify-center md:items-center lg:justify-center lg:items-center mt-5 mb-7"
+          >
+            <div
+              class="bg-[#eff6f1] rounded-[50%] w-[40px] h-[40px] flex justify-center items-center"
+            >
+              <i class="fa-brands fa-twitter text-xl"></i>
+            </div>
+            <div
+              class="bg-[#eff6f1] rounded-[50%] w-[40px] h-[40px] flex justify-center items-center"
+            >
+              <i class="fa-brands fa-instagram text-xl"></i>
+            </div>
+            <div
+              class="bg-[#eff6f1] rounded-[50%] w-[40px] h-[40px] flex justify-center items-center"
+            >
+              <i class="fa-brands fa-facebook text-xl"></i>
+            </div>
+            <div
+              class="bg-[#eff6f1] rounded-[50%] w-[40px] h-[40px] flex justify-center items-center"
+            >
+              <i class="fa-brands fa-linkedin text-xl"></i>
+            </div>
+          </div>
+          <!-- icon  -->
+        </div>
+        <div class="text-left border-l-2 px-8">
+          <h3 class="text-lg font-bold text-[#274C5B]">Utility Pages</h3>
+          <p>Style Guide</p>
+          <p>404 Not Found</p>
+          <p>Password Protected</p>
+          <p>Licences</p>
+          <p>Changelog</p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="text-center py-6">
+        <p>
+          Copyright © <span class="font-semibold">Organic</span> | Designed by
+          <a
+            class="font-semibold text-gray-500"
+            href="https://www.facebook.com/ArafatIbnAbdullah.A?_rdc=1&_rdr"
+            >Arafat Ibn Abdullah</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Define the clearInput function
+      function clearInput() {
+        const inputField = document.getElementById("inputText");
+        inputField.value = "";
+      }
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
